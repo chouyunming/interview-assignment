@@ -45,7 +45,12 @@ Run training on [Google Colab](https://colab.research.google.com):
 # ... see notebooks/ for complete examples
 ```
 
+Or locally:
+
+```bash
+python src/main.py --model resnet --epochs 5 --batch-size 32
 ```
+
 ## Usage
 
 ### Command Line Training
@@ -66,7 +71,7 @@ python src/main.py [OPTIONS]
 
 **Example:**
 ```bash
-python src/main.py --model vitb16 --epochs 10 --batch-size 64 --wandb True
+python src/main.py --model vitb16 --epochs 5 --pretrained True --wandb True
 ```
 
 ### Evaluation
@@ -74,7 +79,7 @@ python src/main.py --model vitb16 --epochs 10 --batch-size 64 --wandb True
 Evaluate a trained model:
 
 ```bash
-python src/evaluate.py --checkpoint ckpts/experiment_name/best_model.pth
+python src/evaluate.py --experiment-name dogs-vs-cats-vitb16-pretrained
 ```
 
 ## Project Structure
