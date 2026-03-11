@@ -9,11 +9,11 @@ Prepare your dataset in the following structure:
 ```
 data/
 ├── train/
-│   ├── dogs/
-│   └── cats/
+│   ├── cat.1.jpg/
+│   └── dog.1.jpg/
 └── val/
-    ├── dogs/
-    └── cats/
+    ├── cat.2.jpg/
+    └── dog.2.jpg/
 ```
 
 Training expects image folders organized by class. Supported formats: JPG, PNG.
@@ -22,10 +22,17 @@ Training expects image folders organized by class. Supported formats: JPG, PNG.
 
 ### Local Setup (Editor Support Only)
 
-For type checking and autocomplete in your editor:
+**Option 1: Using pip**
 
 ```bash
-pip3 install -r requirements.txt
+pip install -r requirements.txt
+```
+
+**Option 2: Using conda** (Recommended)
+
+```bash
+conda env create -f environment.yml
+conda activate dogs-vs-cats
 ```
 
 ### Training with GPU (Recommended)
@@ -108,7 +115,7 @@ python src/evaluate.py --checkpoint ckpts/experiment_name/best_model.pth
 ## Adding Dependencies
 
 ```bash
-pip3 install <package-name>
+pip install <package-name>
 echo <package-name> >> requirements.txt
 ```
 
