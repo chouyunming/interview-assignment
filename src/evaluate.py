@@ -5,6 +5,7 @@ Computes metrics, confusion matrix, and ROC curve.
 
 import os
 import json
+import warnings
 import numpy as np
 import torch
 import matplotlib.pyplot as plt
@@ -12,6 +13,9 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, confu
 from torch.utils.data import DataLoader
 from torchvision import transforms
 import seaborn as sns
+
+# Suppress warnings
+warnings.filterwarnings('ignore')
 
 from dataset import DogCatDataset
 import config
