@@ -1,5 +1,4 @@
 import os
-import numpy as np
 from PIL import Image
 from torch.utils.data import Dataset
 
@@ -23,20 +22,6 @@ class DogCatDataset(Dataset):
         return image, label
 
 if __name__ == "__main__":
-    # train_dir = 'data/train'
-    # dataset = DogCatDataset(dir=train_dir)
-
-    # first_five = [dataset[i] for i in range(5)]
-    # last_five = [dataset[i] for i in range(len(dataset) - 5, len(dataset))]
-
-    # print("First 5:")
-    # for i, (img, label) in enumerate(first_five):
-    #     print(f"  {i}: (img.shape={img.shape}, label={label})")
-
-    # print("\nLast 5:")
-    # for i, (img, label) in enumerate(last_five):
-    #     print(f"  {len(dataset) - 5 + i}: (img.shape={img.shape}, label={label})")
-
     data_dirs = {
     'Train': 'data/train',
     'Validation': 'data/val',

@@ -5,7 +5,6 @@ Orchestrates configuration, data loading, model setup, and training.
 
 import os
 import argparse
-import torch
 import torch.nn as nn
 from torch import optim
 from torch.utils.data import DataLoader

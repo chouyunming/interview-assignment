@@ -119,7 +119,7 @@ def plot_confusion_matrix(cm, result_dir):
 
 def plot_roc_curve(labels, probs, result_dir):
     """Plot and save ROC curve."""
-    fpr, tpr, thresholds = roc_curve(labels, probs)
+    fpr, tpr, _ = roc_curve(labels, probs)
     roc_auc = auc(fpr, tpr)
 
     plt.figure(figsize=(8, 6))
