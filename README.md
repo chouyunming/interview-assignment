@@ -42,17 +42,10 @@ Run training on [Google Colab](https://colab.research.google.com):
 ```python
 !git clone https://github.com/chouyunming/interview-assignment.git
 %cd interview-assignment
-from src.model import initialize_model
-from src.train import train
 # ... see notebooks/ for complete examples
 ```
 
-Or locally (CPU-only):
-
-```bash
-python src/main.py --model resnet --epochs 5 --batch-size 32
 ```
-
 ## Usage
 
 ### Command Line Training
