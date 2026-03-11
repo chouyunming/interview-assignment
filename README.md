@@ -45,6 +45,10 @@ Run training on [Google Colab](https://colab.research.google.com):
 # ... see notebooks/ for complete examples
 ```
 
+Or locally:
+
+```bash
+python src/main.py --model resnet --epochs 5 --batch-size 32
 ```
 ## Usage
 
@@ -135,3 +139,4 @@ Training metrics are saved to:
 ## License
 
 Interview assignment.
+
