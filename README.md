@@ -135,7 +135,8 @@ The codebase separates concerns for clean, reusable code:
 Training metrics are saved to:
 - `logs/{experiment}/history.json` — Loss and accuracy per epoch
 - `ckpts/{experiment}/best_model.pth` — Best model checkpoint
-- Weights & Biases (if `--wandb True`)
+- **Weights & Biases** (if `--wandb True`) — View training runs and experiments:
+  - [Dogs vs. Cats Wandb Dashboard](https://wandb.ai/chouyunming-national-chung-hsing-university/dogs-vs-cats?nw=nwuserchouyunming)
 
 ## License
 
