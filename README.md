@@ -42,18 +42,6 @@ docker build -t dogs-vs-cats .
 docker run dogs-vs-cats python src/main.py --model resnet --epochs 5 --batch-size 32
 ```
 
-To run evaluation:
-
-```bash
-docker run dogs-vs-cats python src/evaluate.py --experiment-name dogs-vs-cats-vitb16-pretrained
-```
-
-Mount local data and checkpoints:
-
-```bash
-docker run -v /path/to/data:/app/data -v /path/to/ckpts:/app/ckpts dogs-vs-cats python src/main.py
-```
-
 ### Training with GPU (Recommended)
 
 Run training on [Google Colab](https://colab.research.google.com):
