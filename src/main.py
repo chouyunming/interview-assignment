@@ -41,6 +41,7 @@ def create_transforms(image_size):
         ]),
         'val': transforms.Compose([
             transforms.Resize(image_size),
+            transforms.CenterCrop(image_size),
             transforms.ToTensor(),
             transforms.Normalize(mean=config.NORM_MEAN, std=config.NORM_STD),
         ])
