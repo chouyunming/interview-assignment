@@ -35,7 +35,7 @@ conda env create -f environment.yml
 conda activate dogs-vs-cats
 ```
 
-### Option 3: Using Docker
+### Using Docker
 
 ```bash
 docker build -t dogs-vs-cats .
