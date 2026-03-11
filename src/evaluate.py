@@ -166,10 +166,8 @@ def main():
     from model import initialize_model
 
     parser = argparse.ArgumentParser(description="Evaluate Dogs vs. Cats model")
-    parser.add_argument("--model", type=str, default="resnet", choices=["resnet", "vitb16"],
-                        help="Model architecture")
-    parser.add_argument("--checkpoint", type=str, default="./ckpts/dogs-vs-cats-resnet/best_model.pth",
-                        help="Path to model checkpoint")
+    parser.add_argument("--experiment-name", type=str, default="dogs-vs-cats-resnet",
+                        help="Experiment name (used to locate checkpoint)")
     parser.add_argument("--test-dir", type=str, default=config.TEST_PATH,
                         help="Path to test dataset")
     parser.add_argument("--image-size", type=int, default=config.IMAGE_SIZE,
@@ -179,14 +177,22 @@ def main():
 
     args = parser.parse_args()
 
+    # Extract model name from experiment name
+    model_name = "resnet"
+    if "vitb16" in args.experiment_name:
+        model_name = "vitb16"
+
+    # Construct checkpoint path from experiment name
+    checkpoint_path = os.path.join(config.CHECKPOINT_DIR, args.experiment_name, "best_model.pth")
+
     # Load model
-    print(f"\nLoading {args.model} model...")
-    model, _ = initialize_model(args.model, config.NUM_CLASSES, use_pretrained=False)
+    print(f"\nLoading {model_name} model...")
+    model, _ = initialize_model(model_name, config.NUM_CLASSES, feature_extract=False, use_pretrained=False)
     model = model.to(args.device)
 
     # Load checkpoint
-    print(f"Loading checkpoint: {args.checkpoint}")
-    model = load_checkpoint(args.checkpoint, model, args.device)
+    print(f"Loading checkpoint: {checkpoint_path}")
+    model = load_checkpoint(checkpoint_path, model, args.device)
 
     # Load test data
     print(f"Loading test data from {args.test_dir}...")
@@ -194,8 +200,7 @@ def main():
     print(f"Test samples: {len(test_loader.dataset)}\n")
 
     # Evaluate
-    experiment_name = f"dogs-vs-cats-{args.model}"
-    evaluate(model, test_loader, args.device, experiment_name)
+    evaluate(model, test_loader, args.device, args.experiment_name)
 
 
 if __name__ == "__main__":

@@ -176,7 +176,8 @@ def main():
 
     # Setup wandb
     print("\n Setting up logging...")
-    experiment_name = f"dogs-vs-cats-{cfg.model_name}"
+    pretrained_suffix = "-pretrained" if cfg.use_pretrained else ""
+    experiment_name = f"dogs-vs-cats-{cfg.model_name}{pretrained_suffix}"
     setup_wandb(cfg, experiment_name)
     if cfg.wandb_enabled:
         print(f" W&B project: {cfg.wandb_project}")

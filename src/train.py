@@ -62,11 +62,7 @@ def train(model, train_loader, val_loader, criterion, optimizer, num_epochs, dev
             total_samples = 0
             sample_count = 0
 
-            # Progress bar for batches
-            pbar_batch = tqdm(dataloader, desc=f'Epoch {epoch + 1}/{num_epochs} [{phase.upper()}]',
-                            leave=False, unit='batch')
-
-            for inputs, labels in pbar_batch:
+            for inputs, labels in dataloader:
                 inputs = inputs.to(device)
                 labels = labels.to(device)
 
@@ -91,22 +87,7 @@ def train(model, train_loader, val_loader, criterion, optimizer, num_epochs, dev
                 total_samples += batch_size
                 sample_count += batch_size
 
-                # Log to wandb every N iterations
-                if sample_count % iteration_interval == 0 and wandb_enabled:
-                    running_loss_avg = running_loss / total_samples
-                    running_acc = running_corrects.double() / total_samples
-                    wandb.log({
-                        f"{phase}/iteration_loss": float(running_loss_avg),
-                        f"{phase}/iteration_accuracy": float(running_acc),
-                        "iteration": sample_count,
-                        "epoch": epoch
-                    })
 
-                # Update batch progress bar
-                pbar_batch.set_postfix({
-                    'loss': f'{running_loss / total_samples:.4f}',
-                    'acc': f'{running_corrects.double() / total_samples:.4f}'
-                })
 
             epoch_loss = running_loss / len(dataloader.dataset)
             epoch_acc = running_corrects.double() / len(dataloader.dataset)
