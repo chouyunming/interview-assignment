@@ -2,6 +2,22 @@
 
 PyTorch image classification model for distinguishing between dogs and cats. Designed to run on Google Colab with GPU support.
 
+## Data Preparation
+
+Prepare your dataset in the following structure:
+
+```
+data/
+├── train/
+│   ├── dogs/
+│   └── cats/
+└── val/
+    ├── dogs/
+    └── cats/
+```
+
+Training expects image folders organized by class. Supported formats: JPG, PNG.
+
 ## Quick Start
 
 ### Local Setup (Editor Support Only)
@@ -53,6 +69,14 @@ python src/main.py [OPTIONS]
 python src/main.py --model vitb16 --epochs 10 --batch-size 64 --wandb True
 ```
 
+### Evaluation
+
+Evaluate a trained model:
+
+```bash
+python src/evaluate.py --checkpoint ckpts/experiment_name/best_model.pth
+```
+
 ## Project Structure
 
 ```
@@ -74,11 +98,12 @@ python src/main.py --model vitb16 --epochs 10 --batch-size 64 --wandb True
 
 ## Dependencies
 
-- PyTorch 2.0+
-- torchvision
-- timm (for Vision Transformer)
-- wandb (for experiment tracking)
-- numpy, Pillow, scikit-learn, matplotlib
+- **PyTorch 2.0+** — Deep learning framework
+- **torchvision** — Image utilities and pretrained models
+- **timm** — Vision Transformer and other model architectures
+- **wandb** — Experiment tracking and visualization
+- **scikit-learn** — Metrics (confusion matrix, classification report)
+- **numpy, Pillow, matplotlib, seaborn** — Data processing and visualization
 
 ## Adding Dependencies
 
