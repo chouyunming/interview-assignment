@@ -1,6 +1,13 @@
 __pycache__/
-  *.pyc
-  .env
-  *.egg-info/
-  dist/
-  .ipynb_checkpoints/
+*.pyc
+.env
+*.egg-info/
+dist/
+.ipynb_checkpoints/
+# data/
+ckpts/
+logs/
+wandb/
+Miniconda3-latest-Linux-x86_64.sh
+CLAUDE.md
+Dockerfile
