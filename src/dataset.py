@@ -23,16 +23,45 @@ class DogCatDataset(Dataset):
         return image, label
 
 if __name__ == "__main__":
-    train_dir = 'data/train'
-    dataset = DogCatDataset(dir=train_dir)
+    # train_dir = 'data/train'
+    # dataset = DogCatDataset(dir=train_dir)
 
-    first_five = [dataset[i] for i in range(5)]
-    last_five = [dataset[i] for i in range(len(dataset) - 5, len(dataset))]
+    # first_five = [dataset[i] for i in range(5)]
+    # last_five = [dataset[i] for i in range(len(dataset) - 5, len(dataset))]
 
-    print("First 5:")
-    for i, (img, label) in enumerate(first_five):
-        print(f"  {i}: (img.shape={img.shape}, label={label})")
+    # print("First 5:")
+    # for i, (img, label) in enumerate(first_five):
+    #     print(f"  {i}: (img.shape={img.shape}, label={label})")
 
-    print("\nLast 5:")
-    for i, (img, label) in enumerate(last_five):
-        print(f"  {len(dataset) - 5 + i}: (img.shape={img.shape}, label={label})")
+    # print("\nLast 5:")
+    # for i, (img, label) in enumerate(last_five):
+    #     print(f"  {len(dataset) - 5 + i}: (img.shape={img.shape}, label={label})")
+
+    data_dirs = {
+    'Train': 'data/train',
+    'Validation': 'data/val',
+    'Test': 'data/test'
+    }
+
+    print("=" * 70)
+    print("DATASET INFORMATION")
+    print("=" * 70)
+
+    for name, path in data_dirs.items():
+        if os.path.exists(path):
+            files = os.listdir(path)
+            total = len(files)
+
+            # Count cats and dogs
+            cats = sum(1 for f in files if f.startswith('cat.'))
+            dogs = sum(1 for f in files if f.startswith('dog.'))
+
+            print(f"\n{name} ({path})")
+            print(f"Total images: {total}")
+            print(f"Cats: {cats}")
+            print(f"Dogs: {dogs}")
+        else:
+            print(f"\n{name} ({path})")
+            print(f"⚠ Directory not found")
+
+    print("\n" + "=" * 70)
