@@ -4,9 +4,7 @@ __pycache__/
 *.egg-info/
 dist/
 .ipynb_checkpoints/
-data/train/
-data/val/
-data/test/
+data/
 ckpts/
 logs/
 wandb/
