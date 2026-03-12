@@ -104,15 +104,15 @@ $$\text{Precision} = \frac{TP}{TP + FP}$$
 
 $$\text{Recall} = \frac{TP}{TP + FN}$$
 
-**AUC** (Area Under the Receiver Operating Characteristic Curve)
+$$\text{AUC (Area Under the Receiver Operating Characteristic Curve)}$$
 - Measures the probability that the model ranks a random positive example higher than a random negative example
 - Ranges from 0 to 1, with 1.0 being perfect classification
 
 **Legend:**
-- $$\frac{TP}$$ — True Positives (correctly predicted dogs)
-- $$\frac{TN}$$ — True Negatives (correctly predicted cats)
-- $$\frac{FP}$$ — False Positives (cats predicted as dogs)
-- $$\frac{FN}$$ — False Negatives (dogs predicted as cats)
+- $$\text{TP}$$ — True Positives (correctly predicted dogs)
+- $$\text{TN}$$ — True Negatives (correctly predicted cats)
+- $$\text{FP}$$ — False Positives (cats predicted as dogs)
+- $$\text{FN}$$ — False Negatives (dogs predicted as cats)
 
 ## Project Structure
 
