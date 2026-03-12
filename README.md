@@ -89,6 +89,29 @@ Evaluate a trained model:
 python src/evaluate.py --experiment-name dogs-vs-cats-vitb16-pretrained
 ```
 
+#### Metrics
+
+The evaluation computes the following metrics:
+
+**Accuracy**
+$$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
+
+**Precision** (Positive Predictive Value)
+$$\text{Precision} = \frac{TP}{TP + FP}$$
+
+**Recall** (Sensitivity / True Positive Rate)
+$$\text{Recall} = \frac{TP}{TP + FN}$$
+
+**AUC** (Area Under the Receiver Operating Characteristic Curve)
+- Measures the probability that the model ranks a random positive example higher than a random negative example
+- Ranges from 0 to 1, with 1.0 being perfect classification
+
+**Legend:**
+- **TP** — True Positives (correctly predicted dogs)
+- **TN** — True Negatives (correctly predicted cats)
+- **FP** — False Positives (cats predicted as dogs)
+- **FN** — False Negatives (dogs predicted as cats)
+
 ## Project Structure
 
 ```
