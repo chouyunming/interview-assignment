@@ -130,7 +130,9 @@ The evaluation computes the following metrics:
 ├── ckpts/                — Model checkpoints (ignored)
 ├── logs/                 — Training logs (ignored)
 ├── result/               — Evaluation results (ignored)
-├── requirements.txt      — Python dependencies
+├── Dockerfile            — Docker container setup
+├── environment.yml       — Conda environment definition
+├── requirements.txt      — Python dependencies (pip)
 └── README.md
 ```
 
@@ -174,5 +176,6 @@ Training metrics are saved to:
 ## License
 
 Interview assignment.
+
 
 
