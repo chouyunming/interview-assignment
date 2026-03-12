@@ -105,9 +105,10 @@ def parse_args(args=None):
         epilog=
         """
         Examples:
-        python main.py --model vitb16 --epochs 10
-        python main.py --wandb True --batch-size 64
-        python main.py --pretrained False --feature-extract True
+        1.Train from scratch
+        python src/main.py --model resnet --epochs 5 --batch-size 32 --pretrained False --feature-extract False
+        2.Use pretrained weights(fine-tune only final layer)
+        python src/main.py --model vitb16 --epochs 5 --batch-size 32 --pretrained True --feature-extract True
         """
     )
 

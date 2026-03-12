@@ -89,17 +89,19 @@ Evaluate a trained model:
 python src/evaluate.py --experiment-name dogs-vs-cats-vitb16-pretrained
 ```
 
+Results are saved to `result/{experiment-name}/`:
+- `metrics.json` — Accuracy, precision, recall, and AUC
+- `confusion_matrix.png` — Confusion matrix plot
+- `roc_curve.png` — ROC curve plot
+
 #### Metrics
 
 The evaluation computes the following metrics:
 
-**Accuracy**
 $$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
 
-**Precision** (Positive Predictive Value)
 $$\text{Precision} = \frac{TP}{TP + FP}$$
 
-**Recall** (Sensitivity / True Positive Rate)
 $$\text{Recall} = \frac{TP}{TP + FN}$$
 
 **AUC** (Area Under the Receiver Operating Characteristic Curve)
@@ -107,10 +109,10 @@ $$\text{Recall} = \frac{TP}{TP + FN}$$
 - Ranges from 0 to 1, with 1.0 being perfect classification
 
 **Legend:**
-- **TP** — True Positives (correctly predicted dogs)
-- **TN** — True Negatives (correctly predicted cats)
-- **FP** — False Positives (cats predicted as dogs)
-- **FN** — False Negatives (dogs predicted as cats)
+- $$\frac{TP}$$ — True Positives (correctly predicted dogs)
+- $$\frac{TN}$$ — True Negatives (correctly predicted cats)
+- $$\frac{FP}$$ — False Positives (cats predicted as dogs)
+- $$\frac{FN}$$ — False Negatives (dogs predicted as cats)
 
 ## Project Structure
 
@@ -127,6 +129,7 @@ $$\text{Recall} = \frac{TP}{TP + FN}$$
 ├── data/                 — Training and validation data (ignored)
 ├── ckpts/                — Model checkpoints (ignored)
 ├── logs/                 — Training logs (ignored)
+├── result/               — Evaluation results (ignored)
 ├── requirements.txt      — Python dependencies
 └── README.md
 ```
