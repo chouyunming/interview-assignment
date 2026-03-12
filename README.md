@@ -72,7 +72,7 @@ python src/main.py [OPTIONS]
 - `--batch-size N` — Batch size (default: 32)
 - `--learning-rate LR` — Learning rate (default: 0.001)
 - `--pretrained {True, False}` — Use pretrained weights (default: True)
-- `--feature-extract {True, False}` — Freeze backbone, train only head (default: False)
+- `--feature-extract {True, False}` — Freeze backbone, train only head (default: True)
 - `--wandb {True, False}` — Enable Weights & Biases logging (default: False)
 - `--device {cuda, cpu}` — Device (default: cuda if available, else cpu)
 

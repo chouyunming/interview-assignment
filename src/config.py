@@ -34,7 +34,7 @@ EXPERIMENT_NAME = f"dogs-vs-cats-{MODEL_NAME}"  # Experiment name for tracking
 
 # ==================== Weights & Biases Configuration ====================
 WANDB_PROJECT = "dogs-vs-cats"
-WANDB_ENABLED = True
+WANDB_ENABLED = False
 
 # ==================== Checkpoint Configuration ====================
 CHECKPOINT_DIR = "./ckpts"  # Directory to save best model checkpoint
