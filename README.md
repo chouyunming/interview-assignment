@@ -98,13 +98,13 @@ Results are saved to `result/{experiment-name}/`:
 
 The evaluation computes the following metrics:
 
-$$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
+*1.* $$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
 
-$$\text{Precision} = \frac{TP}{TP + FP}$$
+*2.* $$\text{Precision} = \frac{TP}{TP + FP}$$
 
-$$\text{Recall} = \frac{TP}{TP + FN}$$
+*3.* $$\text{Recall} = \frac{TP}{TP + FN}$$
 
-$$\text{AUC (Area Under the Receiver Operating Characteristic Curve)}$$
+*4.* $$\text{AUC (Area Under the Receiver Operating Characteristic Curve)}$$
 - Measures the probability that the model ranks a random positive example higher than a random negative example
 - Ranges from 0 to 1, with 1.0 being perfect classification
 
@@ -174,4 +174,5 @@ Training metrics are saved to:
 ## License
 
 Interview assignment.
+
 
