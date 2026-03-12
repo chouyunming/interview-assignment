@@ -10,7 +10,7 @@ from tqdm import tqdm
 import wandb
 
 
-def train(model, train_loader, val_loader, criterion, optimizer, num_epochs, device, wandb_enabled=True, checkpoint_dir="./ckpts", logs_dir="./logs", iteration_interval=1000):
+def train(model, train_loader, val_loader, criterion, optimizer, num_epochs, device, wandb_enabled=True, checkpoint_dir="./ckpts", logs_dir="./logs"):
     """
     Train the model.
 
@@ -25,7 +25,6 @@ def train(model, train_loader, val_loader, criterion, optimizer, num_epochs, dev
         wandb_enabled: Whether to log to Weights & Biases
         checkpoint_dir: Directory to save best model checkpoint
         logs_dir: Directory to save training metrics JSON
-        iteration_interval: Print metrics every N iterations
 
     Returns:
         Trained model with best validation weights
