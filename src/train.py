@@ -43,7 +43,7 @@ def train(model, train_loader, val_loader, criterion, optimizer, num_epochs, dev
     }
 
     # Progress bar for epochs
-    pbar_epoch = tqdm(range(num_epochs), desc='Epoch', unit='epoch')
+    pbar_epoch = tqdm(range(1, num_epochs + 1), desc='Epoch', unit='epoch')
 
     for epoch in pbar_epoch:
         epoch_metrics = {}
