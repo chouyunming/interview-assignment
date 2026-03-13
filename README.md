@@ -8,12 +8,16 @@ Prepare your dataset in the following structure:
 
 ```
 data/
+data/
 ├── train/
 │   ├── cat.1.jpg
 │   └── dog.1.jpg
 └── val/
-    ├── cat.2.jpg
-    └── dog.2.jpg
+│   ├── cat.2.jpg
+│   └── dog.2.jpg
+└── test/
+    ├── cat.3.jpg
+    └── dog.3.jpg
 ```
 
 Training expects image folders organized by class. Supported formats: JPG, PNG.
