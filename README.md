@@ -8,11 +8,10 @@ Prepare your dataset in the following structure:
 
 ```
 data/
-data/
 ├── train/
 │   ├── cat.1.jpg
 │   └── dog.1.jpg
-└── val/
+├── train/
 │   ├── cat.2.jpg
 │   └── dog.2.jpg
 └── test/
