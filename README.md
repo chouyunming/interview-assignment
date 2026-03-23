@@ -1,6 +1,7 @@
 # Dogs vs. Cats
 
 PyTorch image classification model for distinguishing between dogs and cats. Designed to run on Google Colab with GPU support.
+
 Performance saved to `notebooks/performance.ipynb`
 
 ## Data Preparation
