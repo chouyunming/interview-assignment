@@ -2,7 +2,8 @@
 
 PyTorch image classification model for distinguishing between dogs and cats. Designed to run on Google Colab with GPU support.
 
-Performance saved to `notebooks/performance.ipynb`
+Performance saved to [here](https://github.com/chouyunming/interview-assignment/notebooks/performance.ipynb)
+`notebooks/performance.ipynb`
 
 ## Data Preparation
 
